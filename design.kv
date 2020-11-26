@@ -1,0 +1,350 @@
+<FlatButton@ButtonBehavior+Label>:
+
+<ScreenOne>:
+    on_enter: root.global_declaration()
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'dream.jpg'
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        FlatButton:
+            text: 'Code of __ilprofessore'
+            size_hint: 0.8, 0.1
+            pos_hint: {'x': 0.1, 'y': 0.85}
+            font_size: 50
+            color: 1, 0, 0, 1
+            bold: True
+            background_color: 0.8, 0.8, 0.8, 1
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen4'")
+        Button:
+            text: 'Log In'
+            size_hint: 0.7, 0.2
+            pos_hint: {'x': 0.15, 'y': 0.5}
+            color: 1, 0, 0.5, 1
+            font_size: 36
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen2'")
+        Button:
+            text: 'Sign Up'
+            size_hint: 0.7, 0.2
+            pos_hint: {'x': 0.15, 'y': 0.2}
+            color: 1, 0, 0.5, 1
+            font_size: 36
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen3'")
+        Button:
+            text: 'exit'
+            size_hint: 0.5, 0.1
+            pos_hint: {'x': 0.25, 'y': 0.05}
+            font_size: 25
+            color: 0, 0, 1, 1
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.on_exit()
+<ScreenTwo>:
+    on_enter: root.clear_fields()
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'dream.jpg'
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        TextInput:
+            id: login_username
+            multiline: False
+            font_name: 'Roboto-Italic'
+            hint_text: "enter your username here"
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.15, 'y': 0.8}
+            font_size: 25
+            write_tab: False
+            password: True
+        TextInput:
+            id: login_password
+            multiline: False
+            font_name: 'Roboto-Italic'
+            hint_text: "enter pin (only numbers)"
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.15, 'y': 0.6}
+            font_size: 25
+            password: True
+            write_tab: False
+        Button:
+            text: 'Log In'
+            size_hint: 0.7, 0.2
+            pos_hint: {'x': 0.15, 'y': 0.2}
+            color: 1, 0, 0, 1
+            font_size: 36
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.login_submit()
+                root.switch_screen("'screen6'")
+        Button:
+            text: 'back'
+            size_hint: 0.5, 0.1
+            pos_hint: {'x': 0.25, 'y': 0.05}
+            font_size: 25
+            color: 0, 0, 1, 1
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen1'")
+<ScreenThree>:
+    on_enter: root.clear_fields()
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'dream.jpg'
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        TextInput:
+            id: signup_username
+            multiline: False
+            font_name: 'Roboto-Italic'
+            hint_text: "enter your username here"
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.15, 'y': 0.8}
+            font_size: 25
+            write_tab: False
+            password: True
+        TextInput:
+            id: signup_password
+            multiline: False
+            font_name: 'Roboto-Italic'
+            hint_text: "enter pin (only numbers)"
+            size_hint: 0.7, 0.08
+            pos_hint: {'x': 0.15, 'y': 0.6}
+            font_size: 25
+            password: True
+            write_tab: False
+        Button:
+            text: 'Sign Up'
+            size_hint: 0.7, 0.2
+            pos_hint: {'x': 0.15, 'y': 0.2}
+            color: 1, 0, 0, 1
+            font_size: 36
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.signup_submit()
+                root.switch_screen("'screen5'")
+        Button:
+            text: 'back'
+            size_hint: 0.5, 0.1
+            pos_hint: {'x': 0.25, 'y': 0.05}
+            font_size: 25
+            color: 0, 0, 1, 1
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen1'")
+<ScreenFour>:
+    on_enter:
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'dream.jpg'
+    GridLayout:
+        cols: 2
+        Label:
+            text: "Name: "
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "Zain Ul Abideen"
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "Instagram: "
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "@__ilprofessore"
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "Email: "
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "msfmapper@gmail.com"
+            font_size: 20
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "Profession: "
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        Label:
+            text: "Student SS09 IST"
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+        FlatButton:
+            text: "Back"
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen1'")
+        FlatButton:
+            text: "Quit"
+            font_size: 25
+            color: 1, 0, 0, 1
+            bold: True
+            on_release:
+                root.on_exit()
+<ScreenFive>:
+    on_enter: root.signup_success()
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'dream.jpg'
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        Label:
+            text: 'Notification: '
+            size_hint: 0.8, 0.1
+            pos_hint: {'x': 0.1, 'y': 0.85}
+            font_size: 50
+            color: 1, 0, 0, 1
+            bold: True
+            background_color: 0.8, 0.8, 0.8, 1
+            font_name: 'Roboto-Italic'
+        TextInput:
+            id: log_notif
+            font_name: 'Roboto-Italic'
+            hint_text: "your notification will be displayed here."
+            size_hint: 0.7, 0.4
+            pos_hint: {'x': 0.15, 'y': 0.43}
+            font_size: 25
+            readonly: True
+        Button:
+            text: 'Home'
+            size_hint: 0.7, 0.2
+            pos_hint: {'x': 0.15, 'y': 0.2}
+            color: 1, 0, 0, 1
+            font_size: 36
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen1'")
+        Button:
+            text: 'quit'
+            size_hint: 0.5, 0.1
+            pos_hint: {'x': 0.25, 'y': 0.05}
+            font_size: 25
+            color: 0, 0, 1, 1
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.on_exit()
+
+<ScreenSix>:
+    on_enter: root.signup_success_text()
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'dream.jpg'
+    FloatLayout:
+        pos: 0, 0
+        size: root.width, root.height
+        Label:
+            text: 'Notification: '
+            size_hint: 0.8, 0.1
+            pos_hint: {'x': 0.1, 'y': 0.85}
+            font_size: 50
+            color: 1, 0, 0, 1
+            bold: True
+            background_color: 0.8, 0.8, 0.8, 1
+            font_name: 'Roboto-Italic'
+        TextInput:
+            id: log_notif_text
+            font_name: 'Roboto-Italic'
+            hint_text: "your message will be displayed here."
+            size_hint: 0.7, 0.4
+            pos_hint: {'x': 0.15, 'y': 0.43}
+            font_size: 25
+            readonly: True
+        Button:
+            text: 'Home'
+            size_hint: 0.7, 0.2
+            pos_hint: {'x': 0.15, 'y': 0.2}
+            color: 1, 0, 0, 1
+            font_size: 36
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.click_sound
+                root.switch_screen("'screen1'")
+        Button:
+            text: 'quit'
+            size_hint: 0.5, 0.1
+            pos_hint: {'x': 0.25, 'y': 0.05}
+            font_size: 25
+            color: 0, 0, 1, 1
+            bold: True
+            font_name: 'Roboto-Italic'
+            on_release:
+                root.on_exit()
+
+<Manager>:
+    id: screen_manager
+    ScreenOne:
+        id: screen_one
+        name: 'screen1'
+        manager: screen_manager
+    ScreenTwo:
+        id: screen_two
+        name: 'screen2'
+        manager: screen_manager
+    ScreenThree:
+        id: screen_three
+        name: 'screen3'
+        manager: screen_manager
+    ScreenFour:
+        id: screen_four
+        name: 'screen4'
+        manager: screen_manager
+    ScreenFive:
+        id: screen_five
+        name: 'screen5'
+        manager: screen_manager
+    ScreenSix:
+        id: screen_six
+        name: 'screen6'
+        manager: screen_manager
